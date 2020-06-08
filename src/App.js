@@ -27,6 +27,10 @@ function User(props) {
   return <div>User is: {props.firstName}</div>;
 }
 
+function UsersList(props) {
+  return <div> {props.children} </div>;
+}
+
 class Color extends React.Component {
   render() {
     return <div>{this.props.favColor}</div>;
@@ -58,14 +62,18 @@ function App() {
       <hr />
       <WelcomeBlock />
       <hr />
-      <User firstName='Harper' />
-      <User firstName='Mike' />
-      <User firstName='Alvaro' />
-      <User firstName='Andrea' />
+      <UsersList>
+        <User firstName='Harper' />
+        <User firstName='Mike' />
+        <User firstName='Alvaro' />
+        <User firstName='Andrea' />
+      </UsersList>
       <hr />
       <Color favColor='blue' />
       <hr />
       <ReactPlayer url='https://vimeo.com/channels/top/22439234' playing />
+      <hr />
+      <ReactPlayer url='https://www.youtube.com/watch?v=kJQP7kiw5Fk' playing controls volume='0.5' />
       <hr />
       <Classroom />
     </div>
